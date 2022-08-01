@@ -1,7 +1,7 @@
 terraform {
 
-backend "azurerm" {
-  
+  backend "azurerm" {
+
     resource_group_name  = "tfstate"
     storage_account_name = "tfstate13078"
     container_name       = "tfstate"
@@ -16,14 +16,14 @@ backend "azurerm" {
 
   required_version = ">= 0.12.6"
 }
-  
- 
-  
 
 
- provider "azurerm" {
-    features {}
-  }
 
-  
+
+
+provider "azurerm" {
+  features {}
+}
+
+
   
