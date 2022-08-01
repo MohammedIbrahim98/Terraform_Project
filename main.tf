@@ -1,5 +1,12 @@
 terraform {
 
+backend "azurerm" {
+  
+    resource_group_name  = "tfstate"
+    storage_account_name = "tfstate13078"
+    container_name       = "tfstate"
+    key                  = "root.terraform.tfstate"
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -8,18 +15,15 @@ terraform {
   }
 
   required_version = ">= 0.12.6"
-
+}
   
  
-  backend "azurerm" {
   
-    resource_group_name  = "tfstate"
-    storage_account_name = "tfstate13078"
-    container_name       = "tfstate"
-    key                  = "root.terraform.tfstate"
-  }
-}
+
 
  provider "azurerm" {
     features {}
   }
+
+  
+  
