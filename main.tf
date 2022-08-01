@@ -25,5 +25,28 @@ provider "azurerm" {
   features {}
 }
 
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "East US"
+}
+
+resource "azurerm_container_registry" "acr" {
+  name                = "mohammedkamrulregistry"
+  resource_group_name = "tfstate"
+  location            = "East US"
+  sku                 = "Basic"
+  admin_enabled       = true
+  georeplications {
+    location                = "westeurope"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+  georeplications {
+    location                = "westeurope"
+    zone_redundancy_enabled = true
+    tags                    = {}
+  }
+}
+
 
   
